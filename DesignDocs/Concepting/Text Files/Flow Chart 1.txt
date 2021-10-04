@@ -1,0 +1,49 @@
+----
+
+
+
+level start - frozen - HP set to 100*
+
+player presses play button - unfreeze and begin combat, begin Round:1 Phase:Planning^^
+
+player received full hand of cards
+cards are drawn one at a time off the top of the deck
+
+timer bar set to t seconds, t = battle level x game difficulty*
+timer counts down to 0
+
+enemy intent is displayed (somewhere)
+
+when timer reacher 0, that round enters its Resolution phase
+
+player mana** set to full
+
+player is able to select cards to play
+player can select more than 1 card in the planning phase, but can only select 1 card at a time.
+
+player can choose to prematurely initiate a resolution phase, with or without having picked cards to play
+
+when the Resolution phase completes its course, the round is considered over and ++round starts.
+
+on round end discard all card in hand into the discard pile
+
+---
+
+during resolution phase, player's actions/cards always enter in effect first*
+
+the cards are played in the order the player selected them
+
+enemy acts after all the player's actions have been played out
+
+enemies actions play in the order previously depicted
+
+---
+
+when player hp reacher 0, game over
+when enemy hp reaches 0, victory
+
+* = temporary value
+** = temporary name
+
+
+
