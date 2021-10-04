@@ -6,12 +6,10 @@ using UnityEngine;
 
 public class buttonScript : MonoBehaviour
 {
-    public GameObject button;
     // Start is called before the first frame update
     void Start()
     {
-        button = gameObject;
-        Button btn = button.GetComponent<Button>();
+        Button btn = gameObject.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
     }
 
@@ -27,7 +25,7 @@ public class buttonScript : MonoBehaviour
         switch (gameObject.name)
         {
             case "startGameButton":
-                SceneManager.LoadScene(sceneName: "DebateScene");
+                SceneManager.LoadScene("DebateScene");
                 break;
             case "exitGameButton":
                 Application.Quit();
@@ -36,9 +34,16 @@ public class buttonScript : MonoBehaviour
                 Destroy(GameObject.Find("readyOverlay"));
                 Destroy(gameObject);
 
-                //GameObject 
+                GameObject EventSys = GameObject.Find("EventSystem");
+                EventSys.GetComponent<debateStateScript>().beginDebate();
 
                 //TODO Destroy object and initiate Debate logic
+                break;
+            case "yesButton":
+                SceneManager.LoadScene("DebateScene");
+                break;
+            case "noButton":
+                SceneManager.LoadScene("MainMenuScene");
                 break;
             default:
                 Debug.LogError("Invalid button click (did you forget to add a button case?");
@@ -48,6 +53,6 @@ public class buttonScript : MonoBehaviour
 
     private void OnMouseOver()
     {
-        print("yeet");
+        Debug.Log("hahahahah");
     }
 }
