@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class debateStateScript : MonoBehaviour
 {
@@ -50,7 +51,14 @@ public class debateStateScript : MonoBehaviour
 
     private void checkEndState()
     {
-        
+        if (eli.GetComponent<eliStateScript>().isDead())
+        {
+            SceneManager.LoadScene("DefeatScene");
+        }
+        else if (enemy.GetComponent<enemyStateScript>().isDead())
+        {
+            SceneManager.LoadScene("VictoryScene");
+        }
     }
 
     public Stage getStage()
